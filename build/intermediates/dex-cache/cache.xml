@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Applications/android/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd">
+        <dex dex="/Users/luizcarlos/AndroidStudioProjects/mememaker/app/build/intermediates/pre-dexed/debug/support-v4-19.0.1-996c4e3ee99d17a04d1c80bb42d2d37d9b8d0368.jar" />
+    </item>
+    <item
+        jar="/Applications/android/sdk/extras/android/m2repository/com/android/support/support-v13/19.0.1/support-v13-19.0.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a4d00c1fa39c05a544fc2221af40bbf76e07c7df">
+        <dex dex="/Users/luizcarlos/AndroidStudioProjects/mememaker/app/build/intermediates/pre-dexed/debug/support-v13-19.0.1-c9ef5c4fe8ea50983eb51d0531e7858086898490.jar" />
+    </item>
+    <item
+        jar="/Users/luizcarlos/AndroidStudioProjects/mememaker/app/libs/commons-io-2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/luizcarlos/AndroidStudioProjects/mememaker/app/build/intermediates/pre-dexed/debug/commons-io-2.4-ba2992a7377fb0f4a61f87d0fdb5ff2cd3f44a8d.jar" />
+    </item>
+
+</items>
