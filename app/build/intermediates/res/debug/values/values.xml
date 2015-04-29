@@ -54,6 +54,8 @@
     <string name="send_to">Send To</string>
     <string name="settings_action">Settings</string>
     <string name="share_action">Share</string>
+    <string name="storage_default_value">Internal</string>
+    <string name="storage_key">storage</string>
     <string name="title_activity_create_meme">Create Your Meme</string>
     <string name="title_internal_storage_type">Internal Storage</string>
     <string name="title_private_external_storage_type">Private External</string>
