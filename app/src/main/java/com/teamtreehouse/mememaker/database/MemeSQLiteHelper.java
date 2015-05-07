@@ -11,17 +11,17 @@ import android.provider.BaseColumns;
 public class MemeSQLiteHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "meme.db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 3;
 
     //Meme Table functionality
     public static final String MEME_TABLE = "MEMES";
     public static final String COLLUM_MEME_ASSET = "ASSET";
     public static final String COLLUM_MEME_NAME = "NAME";
     private static String CREATE_MEMES =
-            "CREATE TABLE" + MEME_TABLE + "(" +
+            "CREATE TABLE " + MEME_TABLE + "(" +
                     BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     COLLUM_MEME_ASSET + " TEXT," +
-                    COLLUM_MEME_NAME + "NAME TEXT)";
+                    COLLUM_MEME_NAME + " TEXT)";
 
     //Meme Table Annotations functionality
     public static final String ANNOTATIONS_TABLE = "ANNOTATIONS";
@@ -52,6 +52,9 @@ public class MemeSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade( SQLiteDatabase sqLiteDatabase, int i, int i1 ) {
+        sqLiteDatabase.execSQL( "DROP TABLE IF EXISTS " + MEME_TABLE );
+        sqLiteDatabase.execSQL( "DROP TABLE IF EXISTS " + ANNOTATIONS_TABLE );
 
+        onCreate( sqLiteDatabase );
     }
 }

@@ -54,4 +54,6 @@ public class Meme implements Serializable {
         }
         return BitmapFactory.decodeFile(mAssetLocation);
     }
+
+
 }
