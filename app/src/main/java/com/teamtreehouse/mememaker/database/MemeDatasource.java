@@ -10,6 +10,7 @@ import com.teamtreehouse.mememaker.models.Meme;
 import com.teamtreehouse.mememaker.models.MemeAnnotation;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Evan Anger on 8/17/14.
@@ -51,7 +52,7 @@ public class MemeDatasource {
                 null, //selection args
                 null, //group by
                 null, //having
-                null  //order by
+                MemeSQLiteHelper.COLLUM_MEME_CREATE_TABLE + " DESC"  //order by
         );
 
         ArrayList<Meme> memes = new ArrayList<Meme>();
@@ -123,6 +124,7 @@ public class MemeDatasource {
         ContentValues memeValues = new ContentValues();
         memeValues.put( MemeSQLiteHelper.COLLUM_MEME_NAME, meme.getName() );
         memeValues.put( MemeSQLiteHelper.COLLUM_MEME_ASSET, meme.getAssetLocation() );
+        memeValues.put( MemeSQLiteHelper.COLLUM_MEME_CREATE_TABLE, new Date().getTime() );
         long memeId = sqLiteDatabase.insert( MemeSQLiteHelper.MEME_TABLE, null, memeValues );
 
         try{

@@ -11,17 +11,22 @@ import android.provider.BaseColumns;
 public class MemeSQLiteHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "meme.db";
-    public static final int DB_VERSION = 3;
+    public static final int DB_VERSION = 4;
 
     //Meme Table functionality
     public static final String MEME_TABLE = "MEMES";
     public static final String COLLUM_MEME_ASSET = "ASSET";
     public static final String COLLUM_MEME_NAME = "NAME";
+    public static final String COLLUM_MEME_CREATE_TABLE = "CREATE_DATE";
     private static String CREATE_MEMES =
             "CREATE TABLE " + MEME_TABLE + "(" +
                     BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     COLLUM_MEME_ASSET + " TEXT," +
-                    COLLUM_MEME_NAME + " TEXT)";
+                    COLLUM_MEME_NAME + " TEXT," +
+                    COLLUM_MEME_CREATE_TABLE + " INTEGER)";
+
+    private static final String ALTER_ADD_CREATE_TABLE = "ALTER TABLE " + MEME_TABLE +
+            " ADD COLLUMN " + COLLUM_MEME_CREATE_TABLE + " INTEGER";
 
     //Meme Table Annotations functionality
     public static final String ANNOTATIONS_TABLE = "ANNOTATIONS";
@@ -51,10 +56,19 @@ public class MemeSQLiteHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade( SQLiteDatabase sqLiteDatabase, int i, int i1 ) {
+    public void onUpgrade( SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL( "DROP TABLE IF EXISTS " + MEME_TABLE );
         sqLiteDatabase.execSQL( "DROP TABLE IF EXISTS " + ANNOTATIONS_TABLE );
 
+
         onCreate( sqLiteDatabase );
+
+
+        /*
+        switch ( oldVersion ){
+            case 3:
+                sqLiteDatabase.execSQL( ALTER_ADD_CREATE_TABLE );
+        }
+        */
     }
 }
